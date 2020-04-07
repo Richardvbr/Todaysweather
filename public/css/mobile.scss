@@ -1,0 +1,250 @@
+// Fonts
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url("/fonts/proximanova-reg.woff") format("woff"), url("/fonts/proximanova-reg.ttf")  format("ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url("/fonts/proximanova-bold.woff") format("woff"), url("/fonts/proximanova-bold.ttf")  format("ttf");
+  font-weight: 700;
+}
+
+// Global variables
+$primary-color: #038AFF;
+$background-color: #23252C;
+$accent-color: #3D404D;
+$text-color-white: #fff;
+$text-color-grey: #8D8D8D;
+$font: 'Proxima Nova', sans-serif;
+$bold: 700;
+
+
+// Mobile view: Smartphone - L
+@media screen and (max-width: 750px) {
+  body {
+    .main-container {
+      .app-container {
+        flex-direction: column;
+  
+        .summary-left {
+          position: relative;
+          background: url('/img/sunny.jpg') no-repeat center center/cover;
+          width: 100%;
+          height: 40%;
+          box-shadow: 10px 10px 7px -4px rgba(0,0,0,0.3);
+
+          &:after {
+            box-shadow: inset 0px 0px 120px 10px rgba(0,0,0,0.4);
+          }
+  
+          #summary-type {
+            p {
+              margin: 0 0 0 1rem;
+              font-weight: $bold;
+            }
+  
+            img {
+              width: 75px;
+              margin: 1rem 0;
+              display: block;
+            }
+          }
+  
+          #summary-temp {
+            p {
+              font-size: 2rem;
+              margin: -1.5rem 0 0 1rem;
+            }
+          }
+  
+          #summary-location {
+            p {
+              position: relative;
+              margin: 5rem 0 0 1rem;
+              font-size: 1.5rem;
+            }
+          }
+  
+          #summary-date {
+            p {
+              position: relative;
+              margin: 0 0 0 1rem;
+              padding-bottom: 1rem;
+            }
+          }
+        }
+  
+        .data-right {
+          width: 100%;
+          margin-bottom: 1rem;
+          margin-top: 2rem;
+
+          #error-text {
+            padding: 0 1rem;
+          }
+
+          #error-fix {
+            padding: 0 1rem;
+          }
+  
+          .grid-container {
+            grid-template-columns: 1fr;
+            margin-top: 2rem;
+
+            .card {
+              #card-temp-feelslike {
+                margin-top: -.5rem;
+                text-align: center;
+                margin-bottom: 2rem;
+              }
+
+              #card-precip-max {
+                text-align: center;
+                padding-top: 3.25rem;
+              }
+
+              #card-wind-direction {
+                padding-top: 4.25rem;
+              }
+
+              #card-wind-gust-speed {
+                margin-top: 3.25rem;
+              }
+            }
+          }
+        }
+  
+        .legal {
+          text-align: center;
+          margin-bottom: 1rem;
+          a {
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile view: Tablet
+@media screen and (min-width: 751px) and (max-width: 1200px) {
+  body {
+    .main-container {
+      .app-container {
+        flex-direction: column;
+  
+        .summary-left {
+          position: relative;
+          background: url('/img/sunny.jpg') no-repeat center center/cover;
+          width: 100%;
+          height: 40%;
+          box-shadow: 10px 10px 7px -4px rgba(0,0,0,0.3);
+
+          &:after {
+            box-shadow: inset 0px 0px 120px 10px rgba(0,0,0,0.4);
+          }
+  
+          #summary-type {
+            p {
+              margin: 0 0 0 1rem;
+              font-weight: $bold;
+              font-size: 3rem;
+            }
+  
+            img {
+              width: 150px;
+              margin: 1rem 0;
+              display: block;
+            }
+          }
+  
+          #summary-temp {
+            p {
+              font-size: 4rem;
+              margin: -1.5rem 0 0 1rem;
+            }
+          }
+  
+          #summary-location {
+            p {
+              position: relative;
+              margin: 5rem 0 0 1rem;
+              font-size: 2.5rem;
+            }
+          }
+  
+          #summary-date {
+            p {
+              position: relative;
+              margin: 0 0 0 1rem;
+              padding-bottom: 1rem;
+              font-size: 1.75rem; 
+            }
+          }
+        }
+  
+        .data-right {
+          width: 100%;
+          margin-bottom: 1rem;
+          margin-top: 2rem;
+
+          #error-text {
+            padding: 0 1rem;
+          }
+
+          #error-fix {
+            padding: 0 1rem;
+          }
+  
+          .grid-container {
+            grid-template-columns: 1fr 1fr;
+            margin-top: 2rem;
+          }
+        }
+  
+        .legal {
+          text-align: center;
+          margin-bottom: 1rem;
+          a {
+            font-size: 1rem;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Laptop
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  body {
+    .main-container {
+      .app-container {
+        .data-right {
+          .grid-container {
+            margin-top: 2.5rem;
+
+            .card {
+
+              .sunrise-sunset-flex {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 2.5rem;
+  
+                img {
+                  width: 60px;
+                }
+  
+                p {
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

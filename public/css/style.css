@@ -1,0 +1,337 @@
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url("/fonts/proximanova-reg.woff") format("woff"), url("/fonts/proximanova-reg.ttf") format("ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url("/fonts/proximanova-bold.woff") format("woff"), url("/fonts/proximanova-bold.ttf") format("ttf");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Proxima Nova", sans-serif;
+  color: #8D8D8D;
+}
+
+* a {
+  color: #8D8D8D;
+  text-decoration: none;
+}
+
+* a:hover {
+  color: #fff;
+}
+
+html {
+  background-color: #23252C;
+}
+
+body .main-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+body .main-container .app-container {
+  background-color: #23252C;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+body .main-container .app-container .summary-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url("/img/sunny.jpg") no-repeat center center/cover;
+  width: 35%;
+  -webkit-box-shadow: 10px 0px 7px -4px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 0px 7px -4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+body .main-container .app-container .summary-left:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0px 0px 120px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0px 0px 120px 30px rgba(0, 0, 0, 0.4);
+}
+
+body .main-container .app-container .summary-left #summary-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main-container .app-container .summary-left #summary-type p {
+  margin: 2.5rem 0 0 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+body .main-container .app-container .summary-left #summary-type img {
+  width: 5rem;
+  margin: 2.5rem 2.5rem 0 0;
+  z-index: 1;
+}
+
+body .main-container .app-container .summary-left #summary-temp p {
+  font-size: 4rem;
+  margin: 0 0 0 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  z-index: 1;
+  position: relative;
+}
+
+body .main-container .app-container .summary-left #summary-location p {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 3.75rem 2.5rem;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+body .main-container .app-container .summary-left #summary-date p {
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 2.5rem 2.6rem;
+  font-size: 1rem;
+  color: #fff;
+  z-index: 1;
+}
+
+body .main-container .app-container .data-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 65%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .main-container .app-container .data-right h2 {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+body .main-container .app-container .data-right #error-fix {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+body .main-container .app-container .data-right .grid-container {
+  width: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row;
+  grid-auto-rows: 250px;
+  grid-gap: 2rem;
+  margin-top: 10rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card {
+  background-color: #3D404D;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.17);
+          box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.17);
+}
+
+body .main-container .app-container .data-right .grid-container .card .horizontal-line {
+  height: 4px;
+  background-color: #038AFF;
+  width: 40px;
+  border: none;
+  margin-bottom: 3rem;
+  margin-top: 0.25rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-temp-title,
+body .main-container .app-container .data-right .grid-container .card #card-precip-title,
+body .main-container .app-container .data-right .grid-container .card #card-wind-title,
+body .main-container .app-container .data-right .grid-container .card #card-sunrise-sunset-title,
+body .main-container .app-container .data-right .grid-container .card #card-humidity-title,
+body .main-container .app-container .data-right .grid-container .card #card-storm-title {
+  font-size: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-temp-temp {
+  margin-top: 1rem;
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-temp-feelslike {
+  margin-top: -.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card .card-temp-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .main-container .app-container .data-right .grid-container .card .card-temp-flex #card-temp-max-time {
+  text-align: right;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-precip-perc {
+  margin-top: 1rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-precip-perc > span {
+  font-size: 1.25rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-precip-max {
+  text-align: center;
+  padding-top: 4.25rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-wind-speed {
+  margin-top: .5rem;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-wind-speed > span {
+  font-size: 1.25rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-wind-direction {
+  padding-top: 4.5rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card .card-wind-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-wind-gust-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-wind-gust-speed {
+  margin-top: 3.75rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 2.5rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex img {
+  width: 75px;
+}
+
+body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex p {
+  text-align: center;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-humidity-perc {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-storm-deg {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+body .main-container .app-container .data-right .grid-container .card #card-storm-dist {
+  text-align: center;
+}
+
+body .main-container .app-container .legal a {
+  color: #8D8D8D;
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  margin: 1rem;
+}
+
+body .main-container .app-container .legal a:hover {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

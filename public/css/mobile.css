@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url("/fonts/proximanova-reg.woff") format("woff"), url("/fonts/proximanova-reg.ttf") format("ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova', sans-serif;
+  src: url("/fonts/proximanova-bold.woff") format("woff"), url("/fonts/proximanova-bold.ttf") format("ttf");
+  font-weight: 700;
+}
+
+@media screen and (max-width: 750px) {
+  body .main-container .app-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .main-container .app-container .summary-left {
+    position: relative;
+    background: url("/img/sunny.jpg") no-repeat center center/cover;
+    width: 100%;
+    height: 40%;
+    -webkit-box-shadow: 10px 10px 7px -4px rgba(0, 0, 0, 0.3);
+            box-shadow: 10px 10px 7px -4px rgba(0, 0, 0, 0.3);
+  }
+  body .main-container .app-container .summary-left:after {
+    -webkit-box-shadow: inset 0px 0px 120px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0px 0px 120px 10px rgba(0, 0, 0, 0.4);
+  }
+  body .main-container .app-container .summary-left #summary-type p {
+    margin: 0 0 0 1rem;
+    font-weight: 700;
+  }
+  body .main-container .app-container .summary-left #summary-type img {
+    width: 75px;
+    margin: 1rem 0;
+    display: block;
+  }
+  body .main-container .app-container .summary-left #summary-temp p {
+    font-size: 2rem;
+    margin: -1.5rem 0 0 1rem;
+  }
+  body .main-container .app-container .summary-left #summary-location p {
+    position: relative;
+    margin: 5rem 0 0 1rem;
+    font-size: 1.5rem;
+  }
+  body .main-container .app-container .summary-left #summary-date p {
+    position: relative;
+    margin: 0 0 0 1rem;
+    padding-bottom: 1rem;
+  }
+  body .main-container .app-container .data-right {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  body .main-container .app-container .data-right #error-text {
+    padding: 0 1rem;
+  }
+  body .main-container .app-container .data-right #error-fix {
+    padding: 0 1rem;
+  }
+  body .main-container .app-container .data-right .grid-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card #card-temp-feelslike {
+    margin-top: -.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card #card-precip-max {
+    text-align: center;
+    padding-top: 3.25rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card #card-wind-direction {
+    padding-top: 4.25rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card #card-wind-gust-speed {
+    margin-top: 3.25rem;
+  }
+  body .main-container .app-container .legal {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  body .main-container .app-container .legal a {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 1200px) {
+  body .main-container .app-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .main-container .app-container .summary-left {
+    position: relative;
+    background: url("/img/sunny.jpg") no-repeat center center/cover;
+    width: 100%;
+    height: 40%;
+    -webkit-box-shadow: 10px 10px 7px -4px rgba(0, 0, 0, 0.3);
+            box-shadow: 10px 10px 7px -4px rgba(0, 0, 0, 0.3);
+  }
+  body .main-container .app-container .summary-left:after {
+    -webkit-box-shadow: inset 0px 0px 120px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0px 0px 120px 10px rgba(0, 0, 0, 0.4);
+  }
+  body .main-container .app-container .summary-left #summary-type p {
+    margin: 0 0 0 1rem;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  body .main-container .app-container .summary-left #summary-type img {
+    width: 150px;
+    margin: 1rem 0;
+    display: block;
+  }
+  body .main-container .app-container .summary-left #summary-temp p {
+    font-size: 4rem;
+    margin: -1.5rem 0 0 1rem;
+  }
+  body .main-container .app-container .summary-left #summary-location p {
+    position: relative;
+    margin: 5rem 0 0 1rem;
+    font-size: 2.5rem;
+  }
+  body .main-container .app-container .summary-left #summary-date p {
+    position: relative;
+    margin: 0 0 0 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+  body .main-container .app-container .data-right {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  body .main-container .app-container .data-right #error-text {
+    padding: 0 1rem;
+  }
+  body .main-container .app-container .data-right #error-fix {
+    padding: 0 1rem;
+  }
+  body .main-container .app-container .data-right .grid-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+  body .main-container .app-container .legal {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  body .main-container .app-container .legal a {
+    font-size: 1rem;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  body .main-container .app-container .data-right .grid-container {
+    margin-top: 2.5rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 2.5rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex img {
+    width: 60px;
+  }
+  body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex p {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="/css/mobile.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+    rel="stylesheet" />
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSLaZGClvoI52NQNvm9GKlpiz9VDUjCLM&libraries=places"></script>
+  <title>Today's Weather</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- App container (fullscreen) -->
+    <div class="app-container">
+      <!-- Left section: Summary -->
+      <div class="summary-left">
+        <div id="summary-type">
+          <p id="summary-type-content">Sunny</p>
+          <img id="summary-type-icon" src="/img/sunny.png" alt="clouds-icon" />
+        </div>
+        <div id="summary-temp">
+          <p id="summary-temp-content">17 °C</p>
+        </div>
+        <div id="summary-location">
+          <p id="summary-location-content">Eindhoven, NL</p>
+        </div>
+        <div id="summary-date">
+          <p id="summary-date-content">Wed | Apr 1 | 15:22 pm</p>
+        </div>
+      </div>
+
+      <!-- Right section: Data -->
+      <div class="data-right">
+        <h2 id="error-text"></h2>
+        <p id="error-fix"></p>
+
+        <div class="grid-container">
+          <!-- Data: Temperature -->
+          <div class="card" id="card-temp">
+            <h3 id="card-temp-title">Temperature</h3>
+            <div class="horizontal-line"></div>
+            <p id="card-temp-temp">17 °C</p>
+            <p id="card-temp-feelslike">Feels like 16 °C</p>
+            <div class="card-temp-flex">
+              <div class="card-temp-min">
+                <p id="card-temp-min-temp">Min 11 °C</p>
+                <p id="card-temp-min-time">00:52 am</p>
+              </div>
+              <div class="card-temp-max">
+                <p id="card-temp-max-temp">Max 19 °C</p>
+                <p id="card-temp-max-time">13:16 pm</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data: precipitation -->
+          <div class="card" id="card-precipitation">
+            <h3 id="card-precip-title">Precipitation</h3>
+            <div class="horizontal-line"></div>
+            <p id="card-precip-perc">10%</p>
+            <p id="card-precip-max">40% at 11:00 am</p>
+          </div>
+
+          <!-- Data: Wind -->
+          <div class="card" id="card-wind">
+            <h3 id="card-wind-title">Wind</h3>
+            <div class="horizontal-line"></div>
+            <p id="card-wind-speed">4,4 <span>m/s</span></p>
+            <div class="card-wind-flex">
+              <p id="card-wind-direction">23 NNE</p>
+              <div class="card-wind-gust-flex">
+                <p id="card-wind-gust-speed">Max 28 km/h</p>
+                <p id="card-wind-gust-time">14:00 pm</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data: Sunrise, Sunset -->
+          <div class="card" id="card-sunrise-sunset">
+            <h3 id="card-sunrise-sunset-title">Sunrise | Sunset</h3>
+            <div class="horizontal-line"></div>
+            <div class="sunrise-sunset-flex">
+              <div class="sunrise">
+                <img src="/img/sunrise.png" alt="sunrise-icon" />
+                <p id="card-sunrise-time">06:27 am</p>
+              </div>
+              <div class="sunset">
+                <img src="/img/sunset.png" alt="sunset-icon" />
+                <p id="card-sunset-time">19:03 pm</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data: Humidity -->
+          <div class="card" id="card-humidity">
+            <h3 id="card-humidity-title">Humidity</h3>
+            <div class="horizontal-line"></div>
+            <p id="card-humidity-perc">84%</p>
+          </div>
+
+          <!-- Data: Closest Storm -->
+          <div class="card" id="card-storm">
+            <h3 id="card-storm-title">Closest storm</h3>
+            <div class="horizontal-line"></div>
+            <p id="card-storm-deg">133°</p>
+            <p id="card-storm-dist">8 km</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal statement -->
+      <div class="legal">
+        <a href="https://darksky.net/dev" target="blank">Powered by the DarkSky
+          API</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/05fc138685.js"
+    crossorigin="anonymous"></script>
+  <script src="/app.js"></script>
+</body>
+
+</html>
