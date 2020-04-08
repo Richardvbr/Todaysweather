@@ -1,11 +1,13 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
+require("dotenv").config();
 const API_KEY = process.env.API_KEY;
 const axios = require("axios");
 const express = require("express");
 const app = express();
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Starting server at ${port}`);
+});
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -18,6 +20,4 @@ app.post("/weather", (req, res) => {
   }).then(weatherData => res.json(weatherData.data))
 });
 
-app.listen(() => {
-  console.log("Server Started");
-});
+
