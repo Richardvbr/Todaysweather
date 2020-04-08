@@ -9,6 +9,7 @@ app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
 
+
 app.use(express.json());
 app.use(express.static("public"));
 
