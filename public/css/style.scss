@@ -87,8 +87,7 @@ body {
             position: relative;
           }
 
-          img {
-            width: 5rem;
+          #icon {
             margin: 2.5rem 2.5rem 0 0;
             z-index: 1;
           }
@@ -174,9 +173,9 @@ body {
             #card-temp-title,
             #card-precip-title,
             #card-wind-title,
-            #card-sunrise-sunset-title,
+            #card-uv-title,
             #card-humidity-title,
-            #card-storm-title {
+            #card-cloud-title {
               font-size: 1.25rem;
               font-family: 'Montserrat', sans-serif;
             }
@@ -190,7 +189,6 @@ body {
             }
 
             #card-temp-feelslike {
-              margin-top: -.5rem;
               text-align: center;
               margin-bottom: 2.5rem;
             }
@@ -222,7 +220,7 @@ body {
             }
 
             #card-wind-speed {
-              margin-top: .5rem;
+              margin-top: 1rem;
               font-size: 3rem;
               color: $text-color-white;
               text-align: center;
@@ -273,16 +271,12 @@ body {
               font-weight: $bold;
             }
 
-            #card-storm-deg {
+            #card-cloud-perc {
               color: $text-color-white;
               font-size: 3rem;
               text-align: center;
               margin-top: 1rem;
               font-weight: $bold;
-            }
-
-            #card-storm-dist {
-              text-align: center;
             }
           }
         }

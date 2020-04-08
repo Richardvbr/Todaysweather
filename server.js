@@ -13,7 +13,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.post("/weather", (req, res) => {
-
+  const urlDarkSky = `https://api.darksky.net/forecast/${API_KEY}/${req.body.latitude},${req.body.longitude}?units=auto`;
+  axios({
+    url: urlDarkSky,
+    responseType: 'json'
+  }).then(weatherData => res.json(weatherData.data))
 });
 
 app.listen(3000, () => {

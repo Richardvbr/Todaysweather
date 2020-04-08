@@ -44,7 +44,7 @@
   }
   body .main-container .app-container .summary-left #summary-location p {
     position: relative;
-    margin: 5rem 0 0 1rem;
+    margin: 2.5rem 0 0 1rem;
     font-size: 1.5rem;
   }
   body .main-container .app-container .summary-left #summary-date p {
@@ -55,7 +55,7 @@
   body .main-container .app-container .data-right {
     width: 100%;
     margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   body .main-container .app-container .data-right #error-text {
     padding: 0 1rem;

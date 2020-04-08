@@ -1,16 +1,83 @@
 // Get user location
 window.addEventListener('load', () => {
-  let latitude;
-  let longitude;
-  let location;
-  const errorMsg = document.getElementById('error-text');
-  const errorFix = document.getElementById('error-fix')
   // Run when given access
   let success = (position) => {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    location = `${latitude}, ${longitude}`;
-    console.log(location);
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    // Get weather data
+    fetch('/weather', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        latitude: latitude,
+        longitude: longitude
+      })
+    }).then(res => res.json()).then(weatherData => {
+      // Set weather data
+      function setWeatherData() {
+        summaryType.textContent = weatherData.currently.summary;
+        summaryTemp.textContent = `${Math.round(weatherData.currently.temperature)} °C`;
+        dataTemp.textContent = `${Math.round(weatherData.currently.temperature)} °C`;
+        dataFeelsLike.textContent = `Feels like ${Math.round(weatherData.currently.apparentTemperature)} °C`;
+        dataPrecip.textContent = `${Math.round(weatherData.currently.precipProbability * 100)}%`;
+        dataWindSpeed.textContent = `${Math.ceil(weatherData.currently.windSpeed)} km/h`;
+        dataHumidity.textContent = `${Math.round(weatherData.currently.humidity * 100)}%`;
+        dataCloudiness.textContent = `${Math.round(weatherData.currently.cloudCover * 100)}%`;
+
+        // Show position and provide google search for position 
+        summaryLocation.textContent = `Your location is ${weatherData.latitude.toFixed(4)}, ${weatherData.longitude.toFixed(4)}`;
+        const showLocationLink = document.createElement('a');
+        showLocationLink.setAttribute('href', `https://google.com/search?q=${weatherData.latitude},${weatherData.longitude}`);
+        showLocationLink.target = '_blank'
+        showLocationLink.innerHTML = `Show location on Google`;
+        showLocationLink.style.cssText = 'font-size: 0.8rem;padding-left:0.5rem;color:#fff;'
+        summaryLocation.appendChild(showLocationLink);
+
+        // Weather Icons
+        const icon = new Skycons({ color: 'white' });
+        icon.set('icon', weatherData.currently.icon)
+        icon.play();
+
+        // Set weather background image
+        const imageBG = document.querySelector('.summary-left')
+        switch (weatherData.currently.icon) {
+          case "partly-cloudy-day":
+            imageBG.style.background = 'url(/img/overcast.jpg)'
+            break
+          case "partly-cloudy-night":
+            imageBG.style.background = 'url(/img/overcast.jpg)'
+            break
+          case "cloudy":
+            imageBG.style.background = 'url(/img/cloudy.jpg)'
+            break
+          case "clear-day":
+            imageBG.style.background = 'url(/img/sunny.jpg)'
+            break
+          case "clear-night":
+            imageBG.style.background = 'url(/img/sunny.jpg)'
+            break
+          case "rain":
+            imageBG.style.background = 'url(/img/raining.jpg)'
+            break
+        }
+
+        // Show local time
+        function appendZeroInTime(n) {
+          if (n <= 9) {
+            return "0" + n;
+          }
+          return n
+        }
+        const unixTimeStamp = weatherData.currently.time;
+        const currentDate = new Date(unixTimeStamp * 1000);
+        const time = currentDate.getDate() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getFullYear() + " " + appendZeroInTime((currentDate.getHours())) + ':' + appendZeroInTime((currentDate.getMinutes()));
+        summaryDate.textContent = time;
+      }
+      setWeatherData();
+    })
   }
   // Run when access is denied
   let error = () => {
@@ -19,17 +86,16 @@ window.addEventListener('load', () => {
     errorMsg.appendChild(a);
     errorFix.appendChild(b);
   }
+  // REQUEST LOCATION: Permission --> run success function | Denied --> run error function
   navigator.geolocation.getCurrentPosition(success, error)
 })
 
-// Get weather data
-async function fetchData() {
-  let response = fetch()
-}
+// Variables
 
+// Error
+const errorMsg = document.getElementById('error-text');
+const errorFix = document.getElementById('error-fix')
 
-
-// Variables: weather data
 // Summary
 const summaryType = document.getElementById('summary-type-content')
 const summaryIcon = document.getElementById('summary-type-icon')
@@ -40,20 +106,14 @@ const summaryDate = document.getElementById('summary-date-content')
 // Temperature
 const dataTemp = document.getElementById('card-temp-temp')
 const dataFeelsLike = document.getElementById('card-temp-feelslike')
-const dataMinTemp = document.getElementById('card-temp-min-temp')
-const dataMinTime = document.getElementById('card-temp-min-time')
-const dataMaxTemp = document.getElementById('card-temp-max-temp')
-const dataMaxTime = document.getElementById('card-temp-max-time')
 
 // Precipitation
 const dataPrecip = document.getElementById('card-precip-perc')
-const dataPrecipMax = document.getElementById('card-precip-max')
 
 // Wind
 const dataWindSpeed = document.getElementById('card-wind-speed')
 const dataWindDir = document.getElementById('card-wind-direction')
 const dataGustSpeed = document.getElementById('card-wind-gust-speed')
-const dataGustTime = document.getElementById('card-wind-gust-time')
 
 // Sunrise Sunset
 const dataSunrise = document.getElementById('card-sunrise-time')
@@ -62,7 +122,5 @@ const dataSunset = document.getElementById('card-sunset-time')
 // Humidity
 const dataHumidity = document.getElementById('card-humidity-perc')
 
-// Closest storm
-const dataStormDeg = document.getElementById('card-storm-deg')
-const dataStormDist = document.getElementById('card-storm-dist')
-// end of weather data variables
+// Cloud coverage
+const dataCloudiness = document.getElementById('card-cloud-perc')

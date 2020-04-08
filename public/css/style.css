@@ -95,8 +95,7 @@ body .main-container .app-container .summary-left #summary-type p {
   position: relative;
 }
 
-body .main-container .app-container .summary-left #summary-type img {
-  width: 5rem;
+body .main-container .app-container .summary-left #summary-type #icon {
   margin: 2.5rem 2.5rem 0 0;
   z-index: 1;
 }
@@ -192,9 +191,9 @@ body .main-container .app-container .data-right .grid-container .card .horizonta
 body .main-container .app-container .data-right .grid-container .card #card-temp-title,
 body .main-container .app-container .data-right .grid-container .card #card-precip-title,
 body .main-container .app-container .data-right .grid-container .card #card-wind-title,
-body .main-container .app-container .data-right .grid-container .card #card-sunrise-sunset-title,
+body .main-container .app-container .data-right .grid-container .card #card-uv-title,
 body .main-container .app-container .data-right .grid-container .card #card-humidity-title,
-body .main-container .app-container .data-right .grid-container .card #card-storm-title {
+body .main-container .app-container .data-right .grid-container .card #card-cloud-title {
   font-size: 1.25rem;
   font-family: 'Montserrat', sans-serif;
 }
@@ -208,7 +207,6 @@ body .main-container .app-container .data-right .grid-container .card #card-temp
 }
 
 body .main-container .app-container .data-right .grid-container .card #card-temp-feelslike {
-  margin-top: -.5rem;
   text-align: center;
   margin-bottom: 2.5rem;
 }
@@ -244,7 +242,7 @@ body .main-container .app-container .data-right .grid-container .card #card-prec
 }
 
 body .main-container .app-container .data-right .grid-container .card #card-wind-speed {
-  margin-top: .5rem;
+  margin-top: 1rem;
   font-size: 3rem;
   color: #fff;
   text-align: center;
@@ -308,16 +306,12 @@ body .main-container .app-container .data-right .grid-container .card #card-humi
   font-weight: 700;
 }
 
-body .main-container .app-container .data-right .grid-container .card #card-storm-deg {
+body .main-container .app-container .data-right .grid-container .card #card-cloud-perc {
   color: #fff;
   font-size: 3rem;
   text-align: center;
   margin-top: 1rem;
   font-weight: 700;
-}
-
-body .main-container .app-container .data-right .grid-container .card #card-storm-dist {
-  text-align: center;
 }
 
 body .main-container .app-container .legal a {
