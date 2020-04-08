@@ -1,5 +1,3 @@
-// Run dev server: npm run test
-
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -20,6 +18,6 @@ app.post("/weather", (req, res) => {
   }).then(weatherData => res.json(weatherData.data))
 });
 
-app.listen(3000, () => {
+app.listen(() => {
   console.log("Server Started");
 });

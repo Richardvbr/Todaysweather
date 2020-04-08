@@ -90,8 +90,6 @@ window.addEventListener('load', () => {
   navigator.geolocation.getCurrentPosition(success, error)
 })
 
-// Variables
-
 // Error
 const errorMsg = document.getElementById('error-text');
 const errorFix = document.getElementById('error-fix')
@@ -115,9 +113,9 @@ const dataWindSpeed = document.getElementById('card-wind-speed')
 const dataWindDir = document.getElementById('card-wind-direction')
 const dataGustSpeed = document.getElementById('card-wind-gust-speed')
 
-// Sunrise Sunset
-const dataSunrise = document.getElementById('card-sunrise-time')
-const dataSunset = document.getElementById('card-sunset-time')
+// UV - Visibility
+const dataUVIndex = document.getElementById('card-uv-index')
+const dataVisDist = document.getElementById('card-vis-dist')
 
 // Humidity
 const dataHumidity = document.getElementById('card-humidity-perc')
