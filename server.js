@@ -20,5 +20,3 @@ app.post("/weather", (req, res) => {
     responseType: 'json'
   }).then(weatherData => res.json(weatherData.data))
 });
-
-

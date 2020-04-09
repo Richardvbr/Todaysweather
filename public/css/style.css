@@ -61,6 +61,7 @@ body .main-container .app-container .summary-left {
   -webkit-box-shadow: 10px 0px 7px -4px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 0px 7px -4px rgba(0, 0, 0, 0.3);
   position: relative;
+  z-index: 0;
 }
 
 body .main-container .app-container .summary-left:after {
@@ -116,6 +117,11 @@ body .main-container .app-container .summary-left #summary-location p {
   margin: 0 0 3.75rem 2.5rem;
   font-size: 2rem;
   z-index: 1;
+}
+
+body .main-container .app-container .summary-left #summary-location a {
+  z-index: 10;
+  font-size: 2rem;
 }
 
 body .main-container .app-container .summary-left #summary-date p {
@@ -280,7 +286,7 @@ body .main-container .app-container .data-right .grid-container .card #card-wind
   margin-top: 3.75rem;
 }
 
-body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex {
+body .main-container .app-container .data-right .grid-container .card .uv-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,11 +296,21 @@ body .main-container .app-container .data-right .grid-container .card .sunrise-s
   margin: 0 2.5rem;
 }
 
-body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex img {
-  width: 75px;
+body .main-container .app-container .data-right .grid-container .card .uv-flex #card-uv,
+body .main-container .app-container .data-right .grid-container .card .uv-flex #card-vis {
+  font-size: 1rem;
+  margin-top: -1rem;
 }
 
-body .main-container .app-container .data-right .grid-container .card .sunrise-sunset-flex p {
+body .main-container .app-container .data-right .grid-container .card .uv-flex #card-uv-index,
+body .main-container .app-container .data-right .grid-container .card .uv-flex #card-vis-dist {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+body .main-container .app-container .data-right .grid-container .card .uv-flex p {
   text-align: center;
 }
 

@@ -24,6 +24,8 @@ window.addEventListener('load', () => {
         dataFeelsLike.textContent = `Feels like ${Math.round(weatherData.currently.apparentTemperature)} °C`;
         dataPrecip.textContent = `${Math.round(weatherData.currently.precipProbability * 100)}%`;
         dataWindSpeed.textContent = `${Math.ceil(weatherData.currently.windSpeed)} km/h`;
+        dataUVIndex.textContent = weatherData.currently.uvIndex;
+        dataVisDist.textContent = `${Math.round(weatherData.currently.visibility)} km`;
         dataHumidity.textContent = `${Math.round(weatherData.currently.humidity * 100)}%`;
         dataCloudiness.textContent = `${Math.round(weatherData.currently.cloudCover * 100)}%`;
 
@@ -32,8 +34,8 @@ window.addEventListener('load', () => {
         const showLocationLink = document.createElement('a');
         showLocationLink.setAttribute('href', `https://google.com/search?q=${weatherData.latitude},${weatherData.longitude}`);
         showLocationLink.target = '_blank'
-        showLocationLink.innerHTML = `Show location on Google`;
-        showLocationLink.style.cssText = 'font-size: 0.8rem;padding-left:0.5rem;color:#fff;'
+        showLocationLink.innerHTML = `Open location`;
+        showLocationLink.style.cssText = 'font-size: 0.8rem;rem;color:#fff;padding:0.5rem'
         summaryLocation.appendChild(showLocationLink);
 
         // Weather Icons
@@ -82,7 +84,7 @@ window.addEventListener('load', () => {
   // Run when access is denied
   let error = () => {
     let a = document.createTextNode('Sorry, this website requires access to your location to function properly');
-    let b = document.createTextNode('Please click the "i" symbol to the left of the URL to change settings')
+    let b = document.createTextNode('Please click the lock icon to the left of the URL to change settings')
     errorMsg.appendChild(a);
     errorFix.appendChild(b);
   }
@@ -98,6 +100,7 @@ const errorFix = document.getElementById('error-fix')
 const summaryType = document.getElementById('summary-type-content')
 const summaryIcon = document.getElementById('summary-type-icon')
 const summaryTemp = document.getElementById('summary-temp-content')
+const summaryOpenLocation = document.getElementById('summary-open-location')
 const summaryLocation = document.getElementById('summary-location-content')
 const summaryDate = document.getElementById('summary-date-content')
 

@@ -83,6 +83,19 @@
   body .main-container .app-container .data-right .grid-container .card #card-wind-gust-speed {
     margin-top: 3.25rem;
   }
+  body .main-container .app-container .data-right .grid-container .card .uv-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 2.5rem;
+  }
+  body .main-container .app-container .data-right .grid-container .card .uv-flex #card-uv,
+  body .main-container .app-container .data-right .grid-container .card .uv-flex #card-vis {
+    margin-top: 0.5rem;
+  }
   body .main-container .app-container .legal {
     text-align: center;
     margin-bottom: 1rem;

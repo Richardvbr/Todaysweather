@@ -112,6 +112,17 @@ $bold: 700;
               #card-wind-gust-speed {
                 margin-top: 3.25rem;
               }
+
+              .uv-flex {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 2.5rem;
+  
+                #card-uv,
+                #card-vis {
+                  margin-top: 0.5rem;
+                }
+              }
             }
           }
         }
