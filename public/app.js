@@ -83,10 +83,12 @@ window.addEventListener('load', () => {
   }
   // Run when access is denied
   let error = () => {
-    let a = document.createTextNode('Sorry, this website requires access to your location to function properly');
+    let a = document.createTextNode('This website requires access to your location to function properly');
     let b = document.createTextNode('Please click the lock icon to the left of the URL to change settings')
+    let c = document.createTextNode("Or if you're on mobile, please enable location services")
     errorMsg.appendChild(a);
     errorFix.appendChild(b);
+    errorFixMobile.appendChild(c);
   }
   // REQUEST LOCATION: Permission --> run success function | Denied --> run error function
   navigator.geolocation.getCurrentPosition(success, error)
@@ -95,6 +97,7 @@ window.addEventListener('load', () => {
 // Error
 const errorMsg = document.getElementById('error-text');
 const errorFix = document.getElementById('error-fix')
+const errorFixMobile = document.getElementById('error-fix-mobile')
 
 // Summary
 const summaryType = document.getElementById('summary-type-content')
