@@ -55,6 +55,9 @@ window.addEventListener('load', () => {
           case "cloudy":
             imageBG.style.background = 'url(/img/cloudy.jpg)'
             break
+          case "clear":
+            imageBG.style.background = 'url(/img/sunny.jpg)'
+            break
           case "clear-day":
             imageBG.style.background = 'url(/img/sunny.jpg)'
             break
