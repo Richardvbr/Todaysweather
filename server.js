@@ -9,6 +9,12 @@ app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
 
+// Ping server
+const url = 'https://todays-weather-rvbr.herokuapp.com/';
+setInterval(() => {
+  http.get(url);
+}, 5 * 60 * 1000); // every 5 minutes
+
 
 app.use(express.json());
 app.use(express.static("public"));
