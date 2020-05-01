@@ -56,7 +56,7 @@ body .main-container .app-container .summary-left {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url("/img/sunny.jpg") no-repeat center center/cover;
+  background: url("/img/background.jpg") no-repeat center center/cover;
   width: 35%;
   -webkit-box-shadow: 10px 0px 7px -4px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 0px 7px -4px rgba(0, 0, 0, 0.3);
@@ -153,7 +153,8 @@ body .main-container .app-container .data-right h2 {
   padding: 0 1rem;
 }
 
-body .main-container .app-container .data-right #error-fix {
+body .main-container .app-container .data-right #error-fix,
+body .main-container .app-container .data-right #error-fix-mobile {
   text-align: center;
   padding: 0 1rem;
 }
