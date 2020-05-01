@@ -13,7 +13,7 @@ app.listen(port, () => {
 const url = 'https://todays-weather-rvbr.herokuapp.com/';
 setInterval(() => {
   http.get(url);
-}, 5 * 60 * 1000); // every 5 minutes
+}, 25 * 60 * 1000); // every 25 minutes
 
 
 app.use(express.json());
