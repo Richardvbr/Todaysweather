@@ -9,10 +9,10 @@ app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
 
-// const url = 'https://todays-weather-rvbr.herokuapp.com/';
-// setInterval(() => {
-//   http.get(url);
-// }, 25 * 60 * 1000);
+const url = 'https://todays-weather-rvbr.herokuapp.com/';
+setInterval(() => {
+  http.get(url);
+}, 29 * 60 * 1000);
 
 
 app.use(express.json());
