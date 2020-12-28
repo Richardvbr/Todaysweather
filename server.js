@@ -9,11 +9,17 @@ app.listen(port, () => {
   console.log(`Starting server at ${port}`);
 });
 
-const url = 'https://todays-weather-rvbr.herokuapp.com/';
-setInterval(() => {
-  http.get(url);
-}, 29 * 60 * 1000);
+// Ping server between 0700-2300
+let pingServer = () => {
+  let time = new Date().getHours();
+  if (time >= 7 && time <= 23) {
+    const url = 'https://todays-weather-rvbr.herokuapp.com/';
+    http.get(url);
+  }
+}
 
+// Call ping function every 29 minutes 
+setInterval(pingServer, 29 * 60 * 1000)
 
 app.use(express.json());
 app.use(express.static("public"));
